@@ -1,0 +1,246 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:sans-serif;
+  position: relative;
+}
+
+nav{
+  width: 100%;
+  height: 80px;
+  background-color: goldenrod;
+}
+
+footer{
+  width: 100%;
+  height: 100px;
+  background-color: goldenrod;
+}
+
+main{
+  width: 100%;
+  padding: 3% 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 50px;
+  background-color: rgba(0, 0, 0, 0.863);
+}
+
+.product{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 9px  rgba(255, 217, 0, 0.559);
+  height: 400px;
+  min-width: 230px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.img-div{
+  background-color: white;
+  width: 100%;
+  padding: 5%;
+  height: 75%;
+  border-radius: 10px 10px 0px 0px;
+  position: relative;
+  border: 2px solid goldenrod;
+}
+
+.img-div::before{
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 1;
+  inset: 0;
+  opacity: 0;
+  background-color: rgba(36, 37, 36, 0.663);
+  transition: opacity .5s ease;
+  border-radius: 10px 10px 0px 0px;
+}
+.img-div:hover::before{
+  opacity: 1;
+}
+
+.img-div img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.txt-div{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3% 5%;
+  background-color: black;
+  border: 2px solid goldenrod;
+  color: whitesmoke;
+  position: relative;
+}
+
+.moreinfo{
+  background-color: white;
+  color: black;
+  position: absolute;
+  min-width: 190px;
+  padding: 4px 30px;
+  inset: 0;
+  top: 50%;
+  border-radius: 25px;
+  display: none;
+  justify-content: space-evenly;
+  font-weight: bold;
+  align-items: center;
+  border: none;
+  z-index: 1;
+  left: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.txt-div:hover::before{
+  opacity: 1;
+}
+
+
+.txt-div span{
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 1%;
+}
+
+.txt-div  i{
+  font-size: 18px;
+}
+
+.hover-info{
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  gap: 10%;
+  z-index: 2;
+  
+}
+
+.hover-info button{
+  padding: 10px 25px;
+  font-weight: bold;
+  color: white;
+  background-color: gold;
+  border:none;
+  color: black;
+  transition: .3s;
+  border-radius: 20px;
+}
+
+.hover-info button:nth-child(2){
+  background-color: limegreen;
+  transform: scale(80%);
+  padding: 13px 25px;
+  animation: pop 1s ease-in-out forwards;
+  color: whitesmoke;
+}
+
+@keyframes pop {
+  0%{
+    transform: scale(80%);
+  }
+  50%,100%{
+    transform: scale(100%);
+  }
+}
+
+.hover-info button:nth-child(2):hover{
+  background-color: lime;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(36, 37, 36, 0.663);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  display: none;
+  z-index: 2;
+}
+
+.modal{
+  width: 70%;
+  height: 25%;
+  min-width: 650px;
+  display: flex;
+  max-height: 600px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.modal i{
+  font-size: 30px;
+  margin: 1%;
+  cursor: pointer;
+}
+
+.img-div2{
+  width: 70%;
+  height: 100%;
+  padding: 5%;
+  box-shadow:0px 0px 12px white;
+  border-radius: 10px ;
+}
+.img-div2 img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.txt-div2{
+  width: 30%;
+  height: 100%;
+  background-color: goldenrod;
+  box-shadow:0px 0px 12px goldenrod;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0% 2%;
+}
+.txt-div2 p{
+  font-size: 18px;
+}
+
+.error{
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  display: none;
+  border-radius: 5px;
+}
+
+.error h1{
+font-size: 35px;
+color: red;
+text-shadow: 2px 2px 3px black;
+text-align: center;
+}
